@@ -1,21 +1,29 @@
+# 🔐 Cursor Security Rules
 
-# Secure Coding Rules
+A curated set of secure coding guidelines designed for use with [Cursor](https://www.cursor.com/) to help developers write secure software from the ground up.
 
-A collection of standardized secure coding rules for vibecoding.
+## 📘 Overview
 
-## Overview
+This repository contains globally applicable secure coding rules that can be imported into your Cursor environment to guide and enhance AI-assisted development.
 
-This repository contains secure coding guidelines that can be globally imported into Cursor & Windsurf.
+## 🚀 Usage
 
-## Usage
+To use these rules in your Cursor setup:
 
-Import these rules using the following repository URL:
+1. Open your Cursor settings.
+2. Navigate to **Rules**.
+3. Copy the contents of [`.cursorrules`](https://github.com/Seezo-io/secure-coding-rules/blob/main/.cursorrules) from this repository.
+4. Paste them into your User rules configuration.
 
-## Coming Soon
+<img width="826" alt="image" src="https://github.com/user-attachments/assets/ef0a4394-023c-4ab6-be57-5d9deaf80940" />
 
-We will be publishing additional language-specific and framework-specific secure coding rules, including:
-- Python secure coding guidelines
-- JavaScript/Node.js security best practices
-- React/Angular security patterns
-- Cloud infrastructure security rules
-- API security guidelines
+
+👉 See the [Cursor Rules Documentation](https://docs.cursor.com/context/rules-for-ai) for more details.
+
+## 🛠️ Coming Soon
+
+We’re actively working on adding language and framework-specific secure coding rules, including:
+- Python
+- Go
+- React and Angular
+- Cloud infrastructure
