@@ -18,12 +18,13 @@
   - Never store plain-text passwords—use **bcrypt, Argon2, or PBKDF2** with strong salts.  
 - **Session Management**:  
   - Store session identifiers securely (e.g., **HTTP-only, Secure, and SameSite cookies**).  
-  - Implement **session expiration and rotation** policies.  
+  - Implement **session expiration and rotation** policies.
+  - Use Account lockout policy whenever applicable
+  - Implement CSRF protection wherever applicable
 - **Implement Role-Based & Attribute-Based Access Control (RBAC/ABAC)**:  
   - Enforce **least privilege**—users and services should have **only the minimum permissions required**.  
   - Always check user authorization in **server-side logic** (never trust client-side checks).  
   - Use **JWT tokens securely** (avoid storing them in local storage; prefer HTTP-only cookies).  
-  - Use Account lockout policy whenever applicable 
 
 ## 3. Data Protection & Encryption
 - **Secure Storage**:  
@@ -80,16 +81,34 @@
   - Restrict container privileges (`run as non-root`, use `read-only` filesystem).  
 - **API Security**:  
   - Enforce **rate limiting** and **authentication** for all APIs.  
-  - Secure **GraphQL endpoints** (e.g., depth limiting, cost analysis).  
+  - Secure **GraphQL endpoints** (e.g., depth limiting, cost analysis).
 
-## 8. OWASP Top 10 Awareness
+## 8. Mobile Application Security
+- **Secure Device Storage**:  
+  - Use **platform-specific secure storage** (e.g., Keychain for iOS, Keystore for Android).  
+  - Implement **app-level encryption** for sensitive data in shared storage.  
+  - **Never store** authentication tokens or credentials in **plaintext or NSUserDefaults/SharedPreferences**.  
+- **Code Protection**:  
+  - Implement **code obfuscation** to prevent reverse engineering.   
+  - Apply **root/jailbreak detection**.  
+- **Secure Communications**:  
+  - Implement **certificate pinning** to prevent man-in-the-middle attacks.  
+- **Permission & Access Control**:  
+  - Implement **contextual authentication** for sensitive features (e.g., biometrics, MFA, etc. before financial transactions).  
+  - Use **secure inter-app communication** (avoid broadcasting sensitive intents on Android).  
+- **Secure Building & Deployment**:  
+  - Keep **SDKs, libraries, and dependencies updated** to address known vulnerabilities.  
+  - Use **code signing** and verify the integrity of published applications. 
+
+## 9. OWASP Top 10 Awareness
 - **Regularly Review Code & Architecture** against **OWASP Top 10 vulnerabilities**:  
-  - Injection (SQL, NoSQL, Command, XXE)  
-  - Broken Authentication & Session Management  
-  - Sensitive Data Exposure  
-  - Broken Access Control  
-  - Security Misconfiguration  
-  - Cross-Site Scripting (XSS)  
-  - Insecure Deserialization  
-  - Using Components with Known Vulnerabilities  
-  - Insufficient Logging & Monitoring  
+  - Broken Access Control
+  - Cryptographic Failures
+  - Injection 
+  - Insecure Design
+  - Security Misconfiguration
+  - Vulnerable and Outdated Components
+  - Identification and Authentication Failures
+  - Software and Data Integrity Failures
+  - Security Logging and Monitoring Failures
+  - Server-Side Request Forgery (SSRF)
